@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.ym.ssm.dao.StudentDao">
+    <resultMap id="user" type="com.ym.ssm.entity.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name" javaType="java.lang.String"/>
+        <result property="age" column="age" javaType="java.lang.Integer"/>
+    </resultMap>
+    <select id="findStudentByID" resultType="com.ym.ssm.entity.User" parameterType="int">
+      select * from user where id=#{id};
+    </select>
+    <update id="updateUser" keyProperty="id" parameterType="com.ym.ssm.entity.User">
+        update user set name=#{name},age=#{age} where id=#{id};
+    </update>
+    <delete id="deleteUserByID" parameterType="int" >
+        delete from user where id=#{id} ;
+    </delete>
+</mapper>

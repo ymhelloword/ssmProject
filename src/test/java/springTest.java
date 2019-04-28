@@ -16,7 +16,5 @@ public class springTest {
         User user = loginSeverceImp.findUserByID(1) ;
         user.setName("ym");
         System.out.println(loginSeverceImp.updateUser(user)) ;
-
-
     }
 }

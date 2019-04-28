@@ -8,6 +8,7 @@
         <result property="name" column="name" javaType="java.lang.String"/>
         <result property="age" column="age" javaType="java.lang.Integer"/>
     </resultMap>
+    <!--通过ID查找user-->
     <select id="findStudentByID" resultType="com.ym.ssm.entity.User" parameterType="int">
       select * from user where id=#{id};
     </select>
